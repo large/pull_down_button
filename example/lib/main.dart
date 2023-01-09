@@ -71,6 +71,35 @@ class ExampleMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PullDownButton(
         itemBuilder: (context) => [
+          PullDownMenuItem.selectable(
+            title: 'Now price',
+            selected: false,
+            onTap: (){},
+            icon: Icons.monetization_on_outlined,
+          ),
+          PullDownMenuItem.selectable(
+            title: 'Zoom tops',
+            selected: true,
+            onTap: (){},
+            icon: Icons.height,
+          ),
+          PullDownMenuItem.selectable(
+            title: 'Date selector',
+            selected: true,
+            onTap: (){},
+            icon: Icons.calendar_today_rounded,
+          ),
+          const PullDownMenuDivider(),
+          PullDownMenuItemSlider(
+              title: "Chart upper and lower bounds",
+              minValue: -300,
+              maxValue: 800,
+              minRange: -300,
+              maxRange: 800,
+              onMinChanged: (v) {},
+              onMaxChanged: (v) {},
+          ),
+          const PullDownMenuDivider(),
           PullDownMenuActionsRow.small(
             items: [
               PullDownMenuItem(

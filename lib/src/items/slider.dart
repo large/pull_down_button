@@ -106,8 +106,9 @@ class _SliderState extends State<_Slider> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = PullDownMenuItemTheme.of(context);
     final defaults = PullDownMenuItemTheme.defaults(context);
-    final style = defaults.textStyle!;
+    final style = theme?.textStyle ?? defaults.textStyle!;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
