@@ -123,6 +123,21 @@ class ExampleMenu extends StatelessWidget {
             icon: CupertinoIcons.list_bullet,
           ),
           const PullDownMenuDivider.large(),
+          PullDownMenuItemSlider(
+            title: "Chart range",
+            minValue: -10,
+            maxValue: 200,
+            minRange: -300,
+            maxRange: 900,
+            onMinChanged: (value) {
+              debugPrint("value $value");
+            },
+            onMaxChanged: (value) {
+              debugPrint("value $value");
+            },
+            activeColor: Colors.redAccent,
+          ),
+          const PullDownMenuDivider.large(),
           PullDownMenuActionsRow.medium(
             items: [
               PullDownMenuItem(

@@ -41,6 +41,7 @@ class ItemExamples extends StatelessWidget {
               child: Icon(CupertinoIcons.sun_max_fill),
             ),
           ),
+          /*
           SliverToBoxAdapter(
             child: SafeArea(
               top: false,
@@ -147,6 +148,7 @@ class ItemExamples extends StatelessWidget {
               ),
             ),
           ),
+           */
         ],
       ),
     );

@@ -22,25 +22,25 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  cupertino_range_slider_improved:
+    dependency: transitive
+    description:
+      name: cupertino_range_slider_improved
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.6.4"
   material_color_utilities:
     dependency: transitive
     description:
       name: material_color_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0"
+    version: "0.1.5"
   meta:
     dependency: transitive
     description:
@@ -54,7 +54,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.4.0"
+    version: "0.4.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -66,7 +66,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.4"
+    version: "2.1.2"
   very_good_analysis:
     dependency: "direct dev"
     description:
