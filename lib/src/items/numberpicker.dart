@@ -1,6 +1,4 @@
-import 'dart:math';
 
-import 'package:cupertino_range_slider_improved/cupertino_range_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -119,6 +117,7 @@ class _NumberPickerState extends State<_NumberPicker> {
                 color: theme?.textStyle!.color! ?? defaults.textStyle!.color!,
               ),
             ),
+            textStyle: style,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
