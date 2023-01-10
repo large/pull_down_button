@@ -5,6 +5,7 @@ export 'src/items/divider.dart' hide PullDownMenuVerticalDivider;
 export 'src/items/entry.dart';
 export 'src/items/item.dart';
 export 'src/items/slider.dart';
+export 'src/items/numberpicker.dart';
 export 'src/items/title.dart';
 export 'src/pull_down_button.dart';
 export 'src/theme/divider_theme.dart';
