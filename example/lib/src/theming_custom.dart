@@ -36,7 +36,7 @@ class ThemingCustom extends StatelessWidget {
             ),
             dividerTheme: PullDownMenuDividerTheme(
               dividerColor: colorScheme.outline,
-              largeDividerColor: colorScheme.outlineVariant,
+              largeDividerColor: colorScheme.outline,
             ),
             itemTheme: PullDownMenuItemTheme(
               destructiveColor: colorScheme.error,

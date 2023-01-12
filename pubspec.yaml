@@ -14,6 +14,8 @@ dependencies:
     sdk: flutter
 
   meta: ^1.7.0
+  cupertino_range_slider_improved: ^2.0.1
+  numberpicker: ^2.1.1
 
 dev_dependencies:
   very_good_analysis: ^3.1.0

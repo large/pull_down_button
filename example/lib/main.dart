@@ -71,6 +71,46 @@ class ExampleMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PullDownButton(
         itemBuilder: (context) => [
+          PullDownMenuItem.selectable(
+            title: 'Now price',
+            selected: false,
+            onTap: () {},
+            icon: Icons.monetization_on_outlined,
+          ),
+          PullDownMenuItem.selectable(
+            title: 'Zoom tops',
+            selected: true,
+            onTap: () {},
+            icon: Icons.height,
+          ),
+          PullDownMenuItem.selectable(
+            title: 'Date selector',
+            selected: true,
+            onTap: () {},
+            icon: Icons.calendar_today_rounded,
+          ),
+          const PullDownMenuDivider(),
+          PullDownMenuItemNumberPicker(
+            title: 'Number picker',
+            off: "Auto",
+            value: 0,
+            step: 5,
+            maxRange: 1000,
+            onChanged: (int value) {
+              debugPrint("numberpicker $value");
+            },
+          ),
+          const PullDownMenuDivider(),
+          PullDownMenuItemSlider(
+            title: "Chart upper and lower bounds",
+            minValue: -300,
+            maxValue: 800,
+            minRange: -300,
+            maxRange: 800,
+            onMinChanged: (v) {},
+            onMaxChanged: (v) {},
+          ),
+          const PullDownMenuDivider(),
           PullDownMenuActionsRow.small(
             items: [
               PullDownMenuItem(
@@ -121,6 +161,21 @@ class ExampleMenu extends StatelessWidget {
             selected: false,
             onTap: () {},
             icon: CupertinoIcons.list_bullet,
+          ),
+          const PullDownMenuDivider.large(),
+          PullDownMenuItemSlider(
+            title: "Chart range",
+            minValue: -10,
+            maxValue: 200,
+            minRange: -300,
+            maxRange: 900,
+            onMinChanged: (value) {
+              debugPrint("value $value");
+            },
+            onMaxChanged: (value) {
+              debugPrint("value $value");
+            },
+            activeColor: Colors.redAccent,
           ),
           const PullDownMenuDivider.large(),
           PullDownMenuActionsRow.medium(
