@@ -48,7 +48,7 @@ class ItemExamples extends StatelessWidget {
               top: edgeInsets.top,
             ),
             children: [
-              const _Category(
+/*             const _Category(
                 header: 'Items',
                 children: [
                   _Tile(
@@ -104,7 +104,7 @@ class ItemExamples extends StatelessWidget {
                     title: 'showPullDownMenu',
                   ),
                 ],
-              ),
+              ),*/
             ],
           );
         },
@@ -112,7 +112,7 @@ class ItemExamples extends StatelessWidget {
     );
   }
 }
-
+/*
 @immutable
 class _Category extends StatelessWidget {
   const _Category({required this.header, required this.children});
@@ -121,7 +121,7 @@ class _Category extends StatelessWidget {
   final List<Widget> children;
 
   @override
-  Widget build(BuildContext context) => CupertinoListSection.insetGrouped(
+  Widget build(BuildContext context) => ListView.insetGrouped(
         header: Text(
           header,
           style: TextStyle(
@@ -159,3 +159,4 @@ class _Tile extends StatelessWidget {
         trailing: const CupertinoListTileChevron(),
       );
 }
+*/

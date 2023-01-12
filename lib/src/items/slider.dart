@@ -4,75 +4,20 @@ import 'package:flutter/material.dart';
 
 import '../../pull_down_button.dart';
 
-///Slider for handling
-class PullDownMenuItemSlider extends PullDownMenuEntry {
-  ///Init slider
+/// This class has to "wrap" round to the class to be a statefull object
+class PullDownMenuItemSlider extends StatefulWidget implements PullDownMenuEntry {
   const PullDownMenuItemSlider({
+    super.key,
     required this.title,
+    required this.maxRange,
+    required this.minRange,
     required this.minValue,
     required this.maxValue,
-    required this.minRange,
-    required this.maxRange,
     required this.onMinChanged,
     required this.onMaxChanged,
     this.activeColor = CupertinoColors.activeBlue, //Colors defaults
     this.trackColor = const Color(0xFFB5B5B5),
     this.thumbColor = const Color(0xFFFFFFFF),
-    super.key,
-  });
-
-  ///Here we go
-  final String title;
-  final double maxRange;
-  final double minRange;
-  final double minValue;
-  final double maxValue;
-  final ValueChanged<double> onMinChanged;
-  final ValueChanged<double> onMaxChanged;
-  final Color activeColor;
-  final Color trackColor;
-  final Color thumbColor;
-
-  @override
-  Widget build(BuildContext context) => _Slider(
-        maxRange: maxRange,
-        minRange: minRange,
-        onMinChanged: onMinChanged,
-        onMaxChanged: onMaxChanged,
-        minValue: minValue,
-        maxValue: maxValue,
-        title: title,
-        activeColor: activeColor,
-        trackColor: trackColor,
-        thumbColor: thumbColor,
-      );
-
-  // Can be ignored
-  @override
-  double get height => 0;
-
-  // Can be ignored
-  @override
-  bool get isDestructive => false;
-
-  // Can be ignored
-  @override
-  bool get represents => false;
-}
-
-/// This class has to "wrap" round to the class to be a statefull object
-class _Slider extends StatefulWidget {
-  const _Slider({
-    required this.title,
-    required this.maxRange,
-    required this.minRange,
-    required this.minValue,
-    required this.maxValue,
-    required this.onMinChanged,
-    required this.onMaxChanged,
-    required this.activeColor,
-    required this.trackColor,
-    required this.thumbColor,
   });
 
   final String title;
@@ -87,10 +32,10 @@ class _Slider extends StatefulWidget {
   final Color thumbColor;
 
   @override
-  State<_Slider> createState() => _SliderState();
+  State<PullDownMenuItemSlider> createState() => _PullDownMenuItemSliderState();
 }
 
-class _SliderState extends State<_Slider> {
+class _PullDownMenuItemSliderState extends State<PullDownMenuItemSlider> {
   late double minValue = widget.minValue;
   late double maxValue = widget.maxValue;
 

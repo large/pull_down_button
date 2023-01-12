@@ -71,37 +71,7 @@ class ExampleMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PullDownButton(
         itemBuilder: (context) => [
-          PullDownMenuItem.selectable(
-            title: 'Now price',
-            selected: false,
-            onTap: () {},
-            icon: Icons.monetization_on_outlined,
-          ),
-          PullDownMenuItem.selectable(
-            title: 'Zoom tops',
-            selected: true,
-            onTap: () {},
-            icon: Icons.height,
-          ),
-          PullDownMenuItem.selectable(
-            title: 'Date selector',
-            selected: true,
-            onTap: () {},
-            icon: Icons.calendar_today_rounded,
-          ),
-          const PullDownMenuDivider(),
-          PullDownMenuItemNumberPicker(
-            title: 'Number picker',
-            off: "Auto",
-            value: 0,
-            step: 5,
-            maxRange: 1000,
-            onChanged: (int value) {
-              debugPrint("numberpicker $value");
-            },
-          ),
-          const PullDownMenuDivider(),
-          PullDownMenuItemSlider(
+          /*PullDownMenuItemSlider(
             title: "Chart upper and lower bounds",
             minValue: -300,
             maxValue: 800,
@@ -109,7 +79,7 @@ class ExampleMenu extends StatelessWidget {
             maxRange: 800,
             onMinChanged: (v) {},
             onMaxChanged: (v) {},
-          ),
+          ),*/
           const PullDownMenuDivider(),
           PullDownMenuActionsRow.small(
             items: [
@@ -134,6 +104,19 @@ class ExampleMenu extends StatelessWidget {
                 icon: CupertinoIcons.doc_text_search,
               ),
             ],
+          ),
+          const PullDownMenuDivider.large(),
+          PullDownMenuItemNumberPicker(
+            title: 'Set static Y-axis',
+            off: "Auto",
+            value: 0,
+            step: 5,
+            maxRange: 1000,
+            onChanged: (int value) {
+              debugPrint("numberpicker $value");
+            },
+            showButtons: false,
+            //subText: "This is the subtext",
           ),
           const PullDownMenuDivider.large(),
           PullDownMenuItem(
@@ -163,7 +146,7 @@ class ExampleMenu extends StatelessWidget {
             icon: CupertinoIcons.list_bullet,
           ),
           const PullDownMenuDivider.large(),
-          PullDownMenuItemSlider(
+          /*PullDownMenuItemSlider(
             title: "Chart range",
             minValue: -10,
             maxValue: 200,
@@ -176,7 +159,7 @@ class ExampleMenu extends StatelessWidget {
               debugPrint("value $value");
             },
             activeColor: Colors.redAccent,
-          ),
+          ),*/
           const PullDownMenuDivider.large(),
           PullDownMenuActionsRow.medium(
             items: [

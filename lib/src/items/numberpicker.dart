@@ -6,59 +6,20 @@ import 'package:numberpicker/numberpicker.dart';
 
 import '../../pull_down_button.dart';
 
-///Slider for handling
-class PullDownMenuItemNumberPicker extends PullDownMenuEntry {
-  ///Init slider
-  const PullDownMenuItemNumberPicker({
-    required this.title,
-    required this.off,
-    required this.value,
-    required this.step,
-    required this.maxRange,
-    required this.onChanged,
-    super.key,
-  });
-
-  ///Here we go
-  final String title;
-  final String off;
-  final int value;
-  final int maxRange;
-  final int step;
-  final ValueChanged<int> onChanged;
-
-  @override
-  Widget build(BuildContext context) => _NumberPicker(
-        value: value,
-        maxRange: maxRange,
-        onChanged: onChanged,
-        step: step,
-        title: title,
-        off: off,
-      );
-
-  // Can be ignored
-  @override
-  double get height => 0;
-
-  // Can be ignored
-  @override
-  bool get isDestructive => false;
-
-  // Can be ignored
-  @override
-  bool get represents => false;
-}
-
 /// This class has to "wrap" round to the class to be a statefull object
-class _NumberPicker extends StatefulWidget {
-  const _NumberPicker(
-      {required this.title,
+class PullDownMenuItemNumberPicker extends StatefulWidget implements PullDownMenuEntry {
+
+  const PullDownMenuItemNumberPicker(
+      {super.key,
+        required this.title,
       required this.off,
       required this.value,
       required this.maxRange,
       required this.step,
-      required this.onChanged});
+      required this.onChanged,
+      this.showButtons = true,
+        this.subText = "",
+      });
 
   final String title;
   final String off;
@@ -66,12 +27,14 @@ class _NumberPicker extends StatefulWidget {
   final int maxRange;
   final int step;
   final ValueChanged<int> onChanged;
+  final bool showButtons;
+  final String subText;
 
   @override
-  State<_NumberPicker> createState() => _NumberPickerState();
+  State<PullDownMenuItemNumberPicker> createState() => _PullDownMenuItemNumberPickerState();
 }
 
-class _NumberPickerState extends State<_NumberPicker> {
+class _PullDownMenuItemNumberPickerState extends State<PullDownMenuItemNumberPicker> {
   late int value = widget.value;
 
   void onChanged(int v) {
@@ -119,6 +82,7 @@ class _NumberPickerState extends State<_NumberPicker> {
             ),
             textStyle: style,
           ),
+          if(widget.showButtons)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -155,6 +119,18 @@ class _NumberPickerState extends State<_NumberPicker> {
               ),
             ],
           ),
+          if(widget.subText.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 4, bottom: 4),
+              child: Text(
+                widget.subText,
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+                style: style,
+              ),
+            ),
         ],
       ),
     );
