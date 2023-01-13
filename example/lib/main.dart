@@ -107,6 +107,17 @@ class ExampleMenu extends StatelessWidget {
           ),
           const PullDownMenuDivider.large(),
           PullDownMenuItemNumberPicker(
+            title: 'Some number',
+            value: 0,
+            step: 1,
+            maxRange: 100,
+            onChanged: (int value) {
+              debugPrint("numberpicker $value");
+            },
+            showButtons: true,
+            //subText: "This is the subtext",
+          ),
+          PullDownMenuItemNumberPicker(
             title: 'Set static Y-axis',
             off: "Auto",
             value: 0,
@@ -117,6 +128,19 @@ class ExampleMenu extends StatelessWidget {
             },
             showButtons: false,
             //subText: "This is the subtext",
+          ),
+          PullDownMenuItemNumberPicker(
+            title: 'Autobutton test',
+            off: "Automagic",
+            value: 0,
+            step: 15,
+            maxRange: 500,
+            onChanged: (int value) {
+              debugPrint("numberpicker $value");
+            },
+            showButtons: false,
+            showAutoButton: true,
+            subText: "This is the subtext",
           ),
           const PullDownMenuDivider.large(),
           PullDownMenuItem(
