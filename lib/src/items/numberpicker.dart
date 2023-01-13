@@ -46,7 +46,6 @@ class _PullDownMenuItemNumberPickerState
   void onChanged(int v, {bool hideAuto = false}) {
     if(v == 0) doNotShow=false;
     if(hideAuto) doNotShow = true;
-    print("hideauto $hideAuto - doNotShow $doNotShow - v=$v");
     setState(() => value = v);
     widget.onChanged(v);
   }
@@ -74,36 +73,22 @@ class _PullDownMenuItemNumberPickerState
               style: style,
             ),
           ),
-          NotificationListener<ScrollNotification>(
-          onNotification: (notification) {
-            if (notification is ScrollStartNotification) {
-              print("start");
-            } else if (notification is ScrollUpdateNotification) {
-              print("scrolling");
-            } else if (notification is ScrollEndNotification) {
-              print("end");
-            } else if(notification is OverscrollNotification){
-              print("doctor");
-            }
-            return true;
-          },
-            child: NumberPicker(
-              value: value,
-              step: widget.step,
-              minValue: 0,
-              maxValue: widget.maxRange,
-              onChanged: onChanged,
-              itemHeight: 60,
-              itemWidth: 60,
-              axis: Axis.horizontal,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                  color: theme?.textStyle!.color! ?? defaults.textStyle!.color!,
-                ),
+          NumberPicker(
+            value: value,
+            step: widget.step,
+            minValue: 0,
+            maxValue: widget.maxRange,
+            onChanged: onChanged,
+            itemHeight: 60,
+            itemWidth: 60,
+            axis: Axis.horizontal,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: theme?.textStyle!.color! ?? defaults.textStyle!.color!,
               ),
-              textStyle: style,
             ),
+            textStyle: style,
           ),
           if (widget.showAutoButton && value > 0 || doNotShow)
             Padding(
@@ -115,8 +100,8 @@ class _PullDownMenuItemNumberPickerState
               ),
             ),
           if (widget.showAutoButton && value == 0 && !doNotShow)
-          SizedBox(
-            width: widget.offWidth,
+          Padding(
+            padding: const EdgeInsets.all(4.0),
             child: Text(
               softWrap: true,
               widget.off,
